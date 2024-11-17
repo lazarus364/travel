@@ -6,21 +6,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const subscriptionForm = document.querySelector(".form-text");
   
     
-    fetch("https://api.brandfetch.io/v2/search/amadeus", {
-        method: "GET",
-        headers: {
-          "Authorization": "Bearer Xb9itGT1ywNJQwmByXDSnvOLFGedne6d", 
-        }
+    fetch("")
+      .then(response => {response.json())
+      .then(data => {
+        populateDestinations(data.destinations);
+        populateTopSelling(data.topSelling);
       })
-        .then(response => {
-          if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-          }
-          return response.json();
-        })
-        .then(data => console.log(data))
-        .catch(error => console.error("Error:", error));
-      
+      .catch(error => console.error("Error fetching data:", error));
   
     function populateDestinations(destinations) {
       destinationSection.innerHTML = ""; 
