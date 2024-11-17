@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    const apiKey ='Xb9itGT1ywNJQwmByXDSnvOLFGedne6d'
+    const apiKey ='3QpjBVXmMY3Qibj+KurJiJfjMD0A92tmWu0Wwi565Tc='
     const destinationSection = document.querySelector(".services-card");
     const topSellingSection = document.querySelector(".title-style .services-card");
     const subscriptionForm = document.querySelector(".form-text");
   
     
-    fetch("")
-      .then(response => {response.json())
+    fetch("https://api.brandfetch.io/v2/search/amadeus?c=1idP9BNtva7Bbo-5LEd")
+      .then(response => response.json())
       .then(data => {
         populateDestinations(data.destinations);
         populateTopSelling(data.topSelling);
