@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
       event.preventDefault();
       const emailInput = subscriptionForm.querySelector(".form-control").value;
   
-      fetch("http://localhost:3000/subscribe", {
+      fetch("https://api.brandfetch.io/v2/search/amadeus?c=1idP9BNtva7Bbo-5LEd", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: emailInput }),
